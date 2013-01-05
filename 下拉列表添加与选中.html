@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+<!-- 引入css外部样式 -->
+<link href="##.css" rel="stylesheet" type="text/css" />
+<!-- 引入外部js -->
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+<!-- 写javascript -->
+<script type="text/javascript">
+//第一种设置方法
+$(document).ready(function(){
+	var s = "<option value='23'>sdsdsd</option>";//生成一个option;
+	$("#a1").append($(s));//添加option 到select中
+	//第二种设置方法
+	$("#a2").find("option:eq(0)").val("111");//给第一个option设置值
+	//alert($("option[value=111]").html());//获取 刚设置值的那个option
+	$("#b3").click(function(){
+		$("#a2").find("option:eq(2)").attr("selected",true);
+	});
+	$("#b2").click(function(){
+		$("#a2").find("option:eq(1)").attr("selected",true);
+	});
+	$("#b1").click(function(){
+		$("#a2").find("option:eq(0)").attr("selected",true);
+	});
+});
+</script>
+</head>
+
+<body>
+<select id="a1">
+
+</select>
+<select id="a2">
+<option >11111111</option>
+<option >22222222</option>
+<option >3333333333</option>
+<option >4444444444</option>
+</select>
+<input type="button" id="b3" value="选中第三项"/>
+<input type="button"  id="b2" value="选中第二项"/>
+<input type="button" id="b1"  value="选中第一项"/>
+</body>
+</html>

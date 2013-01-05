@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+<!-- 引入css外部样式 -->
+<link href="##.css" rel="stylesheet" type="text/css" />
+<!-- 引入外部js -->
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<!-- 写javascript -->
+<script type="text/javascript">
+$(function(){
+	$("#2").click(function(){
+	$("#1 :checkbox").attr("checked",true);
+	});
+	$("#3").click(function(){
+	$("#1 :checkbox").attr("checked",false);});
+	
+	$("#4").click(function(){
+		$("#1 :checkbox").each(function(){
+			$(this).attr("checked",!$(this).attr("checked"));
+		});
+	});
+	
+});
+</script>
+<!-- 写css样式 -->
+<style type="text/css">
+</style>
+</head>
+<body>
+<div id="1">
+<input type="checkbox"/>歌曲1<br />
+<input type="checkbox"/>歌曲2<br />
+<input type="checkbox"/>歌曲3<br />
+<input type="checkbox"/>歌曲4<br />
+<input type="checkbox"/>歌曲5<br />
+</div>
+<input type="button" value="全选"  id="2"/>
+<input type="button" value="全不选"  id="3"/>
+<input type="button" value="反选"  id="4"/>
+
+</body>
+</html>

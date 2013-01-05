@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+
+<!-- 引入外部js -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<!-- 写javascript -->
+<script type="text/javascript">
+var i=0;	
+var j=0;		
+$(function(){ 		
+				$("#b").slideToggle("slow");
+
+				setInterval(function(){
+				//当div的坐标位置为（600，300）时，div就不动了。要注意把i和j 的增量设置为成比例的，不然就到步了指定位置
+				//比如 最后的位置是 （300，100）那么i,j的增量比例应为3：1，即i=i+30,j=i+10;
+				if(i<600&&j<300){
+				$("#a").css("top",i+"px").css("left",j+"px");
+					
+				i=i+10;//每次变化位置的增量
+				j=j+5	
+				}	
+				},100);	//100为执行函数的时间间隔，如果要更快可以改小一些，这里的单位为毫秒。			
+});
+</script>
+<!-- 写css样式 -->
+<style type="text/css">
+div{
+	position:relative;
+	 width:150px;
+	 height:150px;
+	 display:block;
+	
+}
+#a{
+	background:red;
+	left:0px;
+	top:0px;
+}
+#b{
+	background:blue;
+	right:0px;
+	top:0px;
+	display:none;
+}
+
+</style>
+</head>
+<body>
+<div id="a"></div>
+<div id="b"></div>
+</body>
+</html>

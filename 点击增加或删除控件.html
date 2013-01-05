@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+<!-- 引入外部js -->
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<!-- 写javascript -->
+<script type="text/javascript">
+var i=0;
+$(function(){
+$("#a").click(
+function(){	
+	var text =$("<input type='text' id='"+i+"'/>");
+	i=i+1;
+	$("#c").append(text);
+});
+
+$("#b").click(function(){
+	alert($("#"+(i-1)+"").val());
+	
+});
+});
+</script>
+</head>
+<body>
+<div id="c"></div>
+<input type="button" value="点击增加"  id="a"/>
+<input type="button" value="点击初值"  id="b"/>
+</body>
+</html>

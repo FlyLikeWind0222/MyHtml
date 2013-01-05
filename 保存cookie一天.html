@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+
+<!-- 引入外部js -->
+<script type="text/javascript" src="jquery-1.7.js"></script><!--引用JQuery-->
+<script type="text/javascript" src="jquery.cookie.js"></script><!--引用JQuery cookie插件-->
+<!-- 写javascript -->
+<script type="text/javascript">
+//页面加载时调用此函数
+$(function(){
+	$("#a").click(function(){
+		$("#b").css("display","none");//点击隐藏
+		$.cookie("div_display","none",{expires:1});//设置cookie expires:1  cookie保存一天
+	});
+	
+	if($.cookie("div_display")){  //如果cookie存在
+	$("#b").css("display",$.cookie("div_display")); //设置div的样式为cookie的值
+	}
+});
+
+</script>
+
+
+<!-- 写css样式 -->
+<style type="text/css">
+#b{
+background-color:red;
+width:100px;
+height:50px;
+}
+</style>
+</head>	
+<body>
+<div id="b">
+<input type="button" id="a" value="点击"/>
+
+</div>
+生成cookie需要在服务器中使用
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html> 
+<head> 
+  <title> New Document </title> 
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
+  <style type="text/css"> 
+/*模块拖拽*/ 
+.drag{position:absolute;width:100px;height:100px;border:1px solid #ddd;background:#FBF2BD;text-align:center;padding:5px;top:100px;left:20px;cursor:move;} 
+</style> 
+
+<script type="text/javascript"> 
+// 模块拖拽 
+$(function(){ 
+var _move=false;//移动标记 
+var _x,_y;//鼠标离控件左上角的相对位置 
+abc();   
+	
+
+}); 
+
+function abc(){
+$("#bot_1").find("div").each(function(){
+		$(this)
+		.mousedown(function(e){ 
+			_move=true; 
+			_x=e.pageX-parseInt($(this).css("left")); 
+			_y=e.pageY-parseInt($(this).css("top")); 
+		});
+		zzz(this);
+	});
+}
+
+function zzz(id){
+$(document).mousemove(function(e){ 
+        if(_move){ 
+            var x=e.pageX-_x;//移动时根据鼠标位置计算控件左上角的绝对位置 
+            var y=e.pageY-_y; 
+            $(id).css({top:y,left:x});//控件新位置 
+        } 
+    }).mouseup(function(){ 
+    _move=false; 
+   // $(id).fadeTo("fast", 1);//松开鼠标后停止移动并恢复成不透明 
+  }); 
+}
+</script> 
+</head> 
+<body> 
+
+ <div id="bot_1">Backlog()
+      <div  class="drag" style="width:100px; height:100px; background:#930">11111111111111111</div>
+      <div  class="drag" style="width:100px; top:200px;left:40px;height:100px; background:#930">22222222222</div>
+      <div  class="drag" style="width:100px; top:300px;left:80px ;height:100px; background:#930">33333333333333333</div>
+</div>
+
+</body> 
+
+</html> 

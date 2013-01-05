@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+<!-- 引入css外部样式 -->
+<link href="##.css" rel="stylesheet" type="text/css" />
+<!-- 引入外部js -->
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<!-- 写javascript -->
+<script type="text/javascript">
+$(function(){
+	$("#a1 div[id]").css("display","none");
+	$("li div:first").mouseover(function(){
+		$("#a1 div[id]").css("display","block");
+		});
+	$("li").mouseleave(function(){
+	$("#a1 div[id]").css("display","none");	
+		});
+	$("input:button").click(function(){window.close();});	
+	});
+
+</script>
+<!-- 写css样式 -->
+<style type="text/css">
+
+li{
+			float:left;
+			list-style:none;
+}
+</style>
+</head>
+
+<body>
+<ul>
+	<li id="a1">
+    	<div>你好！！</div>
+        <div id="b1">张三你好</div>
+        <div id="b2">李四你好</div>
+    </li>  
+</ul>
+<input type="button" value="关闭" />
+</body>
+</html>

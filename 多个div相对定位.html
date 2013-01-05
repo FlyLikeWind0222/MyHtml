@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+<!-- 引入外部js -->
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<!-- 写javascript -->
+<script type="text/javascript">
+$(function(){
+	//Jquery写法
+	$("#d1").css("top",$("#d").offset().top);
+	$("#d1").css("left",$("#d").offset().left+parseInt($("#d").css("width")));
+	$("#d2").css("top",$("#d").offset().top+parseInt($("#d").css("height")));
+	$("#d2").css("left",$("#d").offset().left);
+	$("#d3").css("top",$("#d").offset().top);
+	$("#d3").css("left",$("#d").offset().left-parseInt($("#d").css("width")));
+	$("#d4").css("top",$("#d").offset().top-parseInt($("#d").css("height")));
+	$("#d4").css("left",$("#d").offset().left);
+	});
+/*
+//JS写法
+window.onload=function(){
+	var d=document.getElementById("d");
+	var d1=document.getElementById("d1");
+	var d2=document.getElementById("d2");
+	var d3=document.getElementById("d3");
+	var d4=document.getElementById("d4");
+	var left=d.offsetLeft;
+	var top=d.offsetTop;
+	var w=d.offsetWidth;
+	var h=d.offsetHeight;
+	d1.style.left=left+"px";
+	d1.style.top=(top-h)+"px";
+	d2.style.left=left+"px";
+	d2.style.top=(top+h)+"px";
+	d3.style.left=(left-w)+"px";
+	d3.style.top=top+"px";
+	d4.style.left=(left+w)+"px";
+	d4.style.top=top+"px";
+}
+*/
+
+
+</script>
+<!-- 写css样式 -->
+<style type="text/css">
+div{	
+	width:100px;
+	height:100px;
+	position: absolute;
+	}
+#d{	
+	background:red;
+	left:200px;
+	top:300px;
+  }
+  #d1{	
+	background:black;
+  }
+  #d2{	
+	background:green;
+  }
+  #d3{	
+	background:blue;
+  }
+  #d4{	
+	background:yellow;
+  }  
+</style>
+</head>
+<body>
+<div id="d"></div>
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+<div id="d4"></div>
+
+</body>
+</html>

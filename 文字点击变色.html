@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	font_change_all(2,5,"a")
+	});
+function font_change_all(i,j,n){
+	for(x=i;x<j;x++){	
+	var y=n+x;
+	 font_change(y);
+		}
+	}
+function font_change(i){	
+		$("#"+i).css("font-size","12px");
+		$("#"+i).mouseover(function(){
+		$(this).css("color","red");
+		$(this).css("text-decoration","underline");
+		}).mouseout(function(){
+			$("#"+i).css("color","black");
+				$(this).css("text-decoration","none");	
+			}).click(function(){
+			$(this).css("color","gray");
+			$(this).css("text-decoration","none");
+			$(this).unbind("mouseover");
+			$(this).unbind("mouseout");
+			});
+		}
+
+$(function(){
+$("#div_1 span").each(
+function(){
+	$(this).css("font-size","12px");
+		$(this).mouseover(function(){
+										$(this).css("color","red");
+										$(this).css("text-decoration","underline");
+						})
+			.mouseout(function(){
+					$(this).css("color","black");
+					$(this).css("text-decoration","none");	
+					})
+			.click(function(){
+								$(this).css("color","gray");
+								$(this).css("text-decoration","none");
+								$(this).unbind("mouseover");
+								$(this).unbind("mouseout");
+					});	
+	
+	});
+});
+</script>
+</head>
+<body>
+<p id="a2">两种效果不知道你要的是哪一种,都看看</p>
+<p id="a3">两种效果不知道你要的是哪一种,都看看</p>
+<p id="a4">两种效果不知道你要的是哪一种,都看看</p>
+<div id="div_1">
+<span>两种效果不知道你要的是哪一种,都看看</span>
+<span>两种效果不知道你要的是哪一种,都看看</span>
+<span>两种效果不知道你要的是哪一种,都看看</span>
+<span>两种效果不知道你要的是哪一种,都看看</span>
+<div>
+</body>
+</html>

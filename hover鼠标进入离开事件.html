@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+<!-- 引入css外部样式 -->
+<link href="##.css" rel="stylesheet" type="text/css" />
+<!-- 引入外部js -->
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<!-- 写javascript -->
+<script type="text/javascript">
+$(function(){
+	$("p").mouseenter(function(){
+									$(this).text("来了");
+								})
+			.mouseleave(function(){
+									$(this).text("走了");
+								});
+});
+
+$(function(){
+	$("div").hover(function(){$(this).html("鼠标来了")},function(){$(this).html("鼠标走了")});
+
+});
+</script>
+<!-- 写css样式 -->
+<style type="text/css">
+</style>
+</head>
+<!--常用控件 
+$(function(){});
+<lable></lable>
+<textarea id="#"></textarea>   
+<input type="button" value="#"  id="#"/>
+<input type="text" 	value="#"  	id="#"/>
+<table>
+	<tr>
+		<td>
+		</td>
+	</tr>
+</table>	
+<div></div>
+-->
+<body>
+<p>你好</p>
+
+<div>hover演示</div>
+</body>
+</html>

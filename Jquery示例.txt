@@ -1,0 +1,121 @@
+★ 使用jQuery来切换样式表
+$("link[media='screen']").attr("href", "Alternative.css");
+★ jQuery检测浏览器类型
+ 
+(if( $.browser.safari)) 
+(if ($.browser.msie && $.browser.version > 6 )) 
+(if ($.browser.msie && $.browser.version <= 6 )) 
+(if ($.browser.mozilla && $.browser.version >= '1.8' )) 
+★ jQuery验证某个元素是否为空
+ 
+if ($("#Demo").html()) { //null;} 
+★ jQuery从集合中获得索引值
+ 
+$("ul > li").click(function () { 
+var index = $(this).prevAll().length; 
+}); 
+★ jQuery选择被选中的option元素
+ 
+$("#someElement").find("option:selected"); 
+★ jQuery为选择器绑定方法
+ 
+$("table").delegate("td", "hover", function(){ 
+$(this).toggleClass("hover"); 
+}); //1.42版后,delegate替代live,因为它们提供了更好的上下文支持 
+★ jQuery自动滚动到页面中的某区域(可以看做一个小插件)
+ 
+jQuery.fn.Autoscroll = function(sel) { 
+$('html,body').animate( 
+{scrollTop: $(sel).offset().top},500 
+); 
+} //调用：$("#area_name").Autoscroll(); 
+★ jQuery限制"TextArea"域中的字符数(可以看做一个小插件)
+ 
+(function($) { 
+jQuery.fn.maxLength = function(max){ 
+this.each(function(){ 
+var type = this.tagName.toLowerCase(); 
+var inputType = this.type ? this.type.toLowerCase() : null; 
+if (type == "input" && inputType == "text" || inputType == "password") { 
+//应用标准的maxLength 
+this.maxLength = max; 
+} 
+else 
+if (type == "textarea") { 
+this.onkeypress = function(e){ 
+var ob = e || event; 
+var keyCode = ob.keyCode; 
+var hasSelection = document.selection ? document.selection.createRange().text.length > 0 : this.selectionStart != this.selectionEnd; 
+return !(this.value.length >= max && (keyCode > 50 || keyCode == 32 || keyCode == 0 || keyCode == 13) && !ob.ctrlKey && !ob.altKey && !hasSelection); 
+}; 
+this.onkeyup = function(){ 
+if (this.value.length > max) { 
+this.value = this.value.substring(0, max); 
+} 
+}; 
+} 
+}); 
+})(jQuery); //调用：$('#macoArea").maxLength(500); 
+★ jQuery判断某个元素是否可见
+ 
+if($("#macoArea").is(":visible") == "true") { //少年,别跑 } 
+★ jQuery元素居中显示(可以看做一个小插件)
+ 
+(function($) { 
+jQuery.fn.center = function () { 
+this.css('position','absolute'); 
+this.css('top', ( $(window).height() - this.height() ) / +$(window).scrollTop() + 'px'); 
+this.css('left', ( $(window).width() - this.width() ) / 2+$(window).scrollLeft() + 'px'); 
+return this; 
+} 
+})(jQuery); //调用：$("#macoArea").center(); 
+★ jQuery使用.siblings()选择同辈元素
+ 
+// 少年,你是否这样操作过 
+$('#nav li').click(function(){ 
+$("#macoArea li").removeClass("current"); 
+$(this).addClass("current"); 
+}); 
+//这样做是不是会更好呢 
+$("#nav li").click(function(){ 
+$(this).addClass("current").siblings().removeClass("current"); 
+}); 
+★ jQuery操作复选框全选反选
+ 
+var sta = false; //你懂,全局东东 
+$('a').click(function() { 
+$("input[type=checkbox]").attr("checked",!sta); 
+sta = !sta; 
+}); 
+★ jQuery获得鼠标光标位置x和y
+ 
+$(document).mousemove(function(e)} 
+$(document).ready(function() { 
+$().mousemove(function(e){ 
+$("#macoArea").html("X Axis : " + e.pageX + " | Y Axis " + e.pageY); 
+}); 
+}); 
+★ jQuery解析XML
+ 
+function ParseXml(xml) { 
+$(xml).find("Node").each(function(){ 
+$("#macoArea").append($(this).attr("Author") + ""); 
+); 
+} 
+★ jQuery判断图像是否被完全加载进来
+ 
+$('#demoImg').attr("src", "demo.jpg").load(function() { 
+alert("是的,你看到的是真的"); 
+}); 
+★ jQuery让Cookie过期
+ 
+var date = new Date(); 
+date.setTime(date.getTime() + (x * 60 * 1000)); 
+$.cookie("example", "foo", { expires: date });; 
+★ jQuery禁止鼠标右键
+ 
+$(function(){ 
+$(document).bind("contextmenu",function(e){ 
+return false; 
+}); 
+}); 

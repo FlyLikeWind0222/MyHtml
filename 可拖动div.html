@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<!-- 写javascript -->
+<script type="text/javascript">
+
+$(function(){
+/*
+$("#b").mousedown(function(e){
+$(this).css("left",e.pageX).css("top",e.pageY);
+});*/
+
+$("#b").mousedown(function(){
+$(document).mousemove(
+		function(e){		
+			$("#c").css("left",e.pageX).css("top",e.pageY);	
+		});
+});
+
+}).mouseup(function(){
+	$("#b").unbind("mousedown");
+	
+});
+</script>
+<!-- 写css样式 -->
+
+
+<style type="text/css">
+<!--
+#a{
+	background-color: #FF0000;
+	height: 150px;
+	width: 200px;
+	position: absolute;
+	left: 150px;
+}
+
+#b{
+	background-color: #0066CC;		
+	height: 50px;
+}
+#c{
+	position: absolute;
+}
+-->
+</style>
+</head>
+<body>
+<div id="c">
+<div id="a">
+<div id="b"></div>
+</div>
+</div>
+</body>
+</html>

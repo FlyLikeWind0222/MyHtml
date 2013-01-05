@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+<!-- 引入css外部样式 -->
+<!-- 引入外部js -->
+<script type="text/javascript" src="jquery-1.7.js"></script>
+
+<!-- 写javascript -->
+<script type="text/javascript">
+//input获得焦点,层显示，失去焦点，层隐藏
+///*
+$(function(){
+	$("#t1").focus(function(){
+		$("#d1").css("display","block");	
+		});
+	
+	});
+//*/
+
+//加载时 把隐藏div
+$(function(){
+
+	//$("#d1[id!=d1]").css("display","none");	
+  $("div").css("display","none");		//若此行取消注释请把上一行代码进行注释
+	});
+
+
+$(function(){
+	$("div[id=d1] li").mouseenter(function(){
+		$("#d"+$(this).attr("id")).css("display","block").mouseleave(function(){
+			$(this).css("display","none");
+			});
+		$("div[id!=d1]").css("display","none");
+		$("#d"+$(this).attr("id")).css("display","block");
+		
+		
+		});
+	});
+	
+$(function(){
+	$("div[id!=d1] p").click(function(){
+		$("#t1").val($(this).html());//点击设置input的值
+		///*
+		$("div").css("display","none");//点击后使所有dv处于隐藏状态
+		//*/	
+	});
+	
+	});
+</script>
+</head>
+<body>
+
+<input type="text" id="t1"/>
+<div id="d1">
+<ul>
+<li id="hn">
+<p>湖南</p>
+<div id="dhn">
+<p>长沙</p>
+<p>株洲</p>
+</div>
+</li>
+<li  id="hb">
+<p>湖北</p>
+<div id="dhb">
+<p>武汉</p>
+<p>宜昌</p>
+</div>
+</li>
+<li id="gz">
+<p>广州</p>
+<div id="dgz">
+<p>韶关</p>
+<p>东莞</p>
+</div>
+</li>
+</ul>
+</div>
+</body>
+</html>

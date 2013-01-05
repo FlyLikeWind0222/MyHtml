@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+		var a_1="";
+        var a_2="";
+		var a_3="";
+		var a_4="";
+		
+		function	output(a,b,c,d){						
+				a_1="浏览器内核:"+a
+				if(a=="Microsoft Internet Explorer"){
+				a_2="浏览器名称:"+"其他";			
+				}else{
+					a_2="浏览器名称:"+b;
+				}
+								
+				a_3="浏览器版本："+c;
+                a_4="操作系统平台："+d;
+				 var f_1= document.getElementById("x");
+                      f_1.innerText = a_1;
+					  var f_2= document.getElementById("y");
+                      f_2.innerText = a_2;
+					  var f_3= document.getElementById("z");
+                      f_3.innerText = a_3;
+					  var f_4= document.getElementById("w");
+                      f_4.innerText = a_4;
+			}			
+		function	checkAppName(x,y,z){
+				var i,j;
+				i =  navigator.appVersion.indexOf(x);					
+				j =	 navigator.appVersion.substring( i+y, i+z);
+				return j;
+
+			}
+		function  	browser(){
+				var name 		=	navigator.appName;
+				var version		=	navigator.appVersion;
+				var platform 	=	navigator.platform;
+				
+				
+				if(name=="Microsoft Internet Explorer"){												
+					version=checkAppName("MSIE",5,8);	;
+			    }else if(name=="Netscape"){
+							if(version.indexOf("Chrome")!=-1){
+								name="Chrome";
+								version=checkAppName("Chrome",7,15);
+							}else if(version.indexOf("Maxthon")!=-1){
+								name="Maxthon"
+								version=checkAppName("Maxthon",8,12);
+								}else{name="Firefox";}																											
+						}else if(name=="Opera"){
+								name=="Opera";
+								version= navigator.appVersion.substring( 0,4);								
+							  }																
+				output(navigator.appName,name,version,platform);
+			}
+
+</script>
+</head>
+<body>
+<div>
+<input type="button" value="查看浏览器相关信息" onClick="browser()">
+<div id="x"></div>
+<div id="y"></div>
+<div id="z"></div>
+<div id="w"></div>
+</div>
+</body>
+</html>

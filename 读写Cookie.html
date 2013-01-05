@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+<!-- 引入外部js -->
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<script type="text/javascript" src="jquery.cookie.js"></script>
+<!-- 写javascript -->
+<script type="text/javascript">
+//需要部署到服务器才能生效
+$(function(){
+if($.cookie("UserName")){
+$("#a1").val($.cookie("UserName"));
+}
+$("#a2").click(function(){
+$.cookie("UserName",$("#1").val(),{expires:1});//设置cookie,保存一天expires:1
+});
+});
+</script>
+</head>
+<body>
+<input type="text" 	id="a1"/>
+<input type="button" value="写cookie"  id="a2"/>
+</body>
+</html>

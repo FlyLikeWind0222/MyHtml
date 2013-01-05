@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+<!-- 引入css外部样式 -->
+<link href="##.css" rel="stylesheet" type="text/css" />
+<!-- 引入外部js -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<!-- 写javascript -->
+<script type="text/javascript">
+$(function(){
+	$("#navigation_1 li").each(function(){
+		$(this).mouseenter(function(){
+			$(this).children("div").css("display","block"); 
+			}).mouseleave(function(){
+				$(this).children("div").css("display","none"); 
+				});
+		});
+	})
+
+</script>
+<!-- 写css样式 -->
+<style type="text/css">
+#navigation_1{
+	list-style:none;	
+  }
+#navigation_1 li{
+	float:left;
+	margin-left:20px;
+	}
+#navigation_1 li div{
+	display:none;
+	}
+</style>
+</head>
+<body>
+        <div>
+        <ul id="navigation_1">
+                        <li><a href="#">主页</a>
+                        
+                        </li>
+                        <li><a href="#">为学生服务</a>
+                            <div>   	
+                                    <a href="#">生服务</a><br />
+                                    <a href="#">学生服务</a><br />
+                                    <a href="#">学生服务</a><br />        
+                            </div>
+                        </li>
+                        <li><a href="#">为雇主服务</a>
+                        	<div>   	
+                                    <a href="#">生服务</a><br />
+                                    <a href="#">学生服务</a><br />
+                                    <a href="#">学生服务</a><br />        
+                            </div>
+                        </li>
+                        <li><a href="#">求职分享</a>
+                       	    <div>   	
+                                    <a href="#">生服务</a><br />
+                                    <a href="#">学生服务</a><br />
+                                    <a href="#">学生服务</a><br />        
+                            </div
+                         </li>
+                        <li><a href="#">招聘资讯</a>
+                             <div>   	
+                                    <a href="#">生服务</a><br />
+                                    <a href="#">学生服务</a><br />
+                                    <a href="#">学生服务</a><br />        
+                             </div</li>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">会员登录</a></li>
+        </ul>
+        </div>
+</body>
+</html>

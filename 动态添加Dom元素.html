@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+<!-- 引入css外部样式 -->
+<link href="##.css" rel="stylesheet" type="text/css" />
+<!-- 引入外部js -->
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+<!-- 写javascript -->
+<script type="text/javascript">
+ $(document).ready(function(){
+		var s = "<select><option>dsadsad</option></select>";
+		$("#a1").html($(s));
+ });
+ 
+ function abc(){
+	var s = document.createElement('select');
+	var x = document.createElement('option');
+	x.innerText = "你好";
+	s.appendChild(x);  
+	document.getElementById("a2").appendChild(s);
+ 
+ }
+</script>
+
+</head>
+
+<body onload="abc()">
+	<div id="a1"></div>
+	<div id="a2"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+<!-- 引入css外部样式 -->
+<link href="##.css" rel="stylesheet" type="text/css" />
+<!-- 引入外部js -->
+<script type="text/javascript" src="jquery-1.7.js"></script>
+<!-- 写css样式 -->
+<style type="text/css">
+body{ filter:Gray;}
+.a{
+	background-color:red;
+}
+.b{
+		font-size:100px;
+}
+
+.night{
+background-color:Black;
+}
+
+</style>
+<!-- 写javascript -->
+<script type="text/javascript">
+$(function(){
+$("#1").click(function(){$("div").addClass("b");}); //添加样式
+$("#2").click(function(){$("div").removeClass("b");});//移除样式
+$("#3").click(function(){$("div").toggleClass("a");});//切换样式  存在样式，则把这个样式移除，不存在则添加这个样式  网页开关灯
+//$("#4").click(function(){$("div").hasClass("a");});//是否有a样式
+$("#4").click(function(){$(document.body).toggleClass("night");});
+});
+</script>
+</head>
+<body>
+<div class="a">你好！</div>
+<img src="01.jpg" height="200px"/><br/>
+<input type="button" value="点击增加样式"  id="1"/>
+<input type="button" value="点击移除样式"  id="2"/>
+<input type="button" value="点击切换样式"  id="3"/>
+<input type="button" value="开或关灯"  id="4"/>
+</body>
+</html>
