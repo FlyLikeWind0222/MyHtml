@@ -1,0 +1,16 @@
+<script>
+	function getBrowerLanguage(){
+		var language;
+		if(navigator.browserLanguage){
+			language = navigator.browserLanguage; //IE内核
+		}else{
+			language = navigator.language;//非IE内核
+		}
+		//不同浏览器的格式不同 转成一致 如zh_CN
+		var arr = language.split("-");
+		arr[1] = (arr[1]+"").toLocaleUpperCase()
+		language = arr[0]+"_"+arr[1];
+		return language;
+	}
+	alert(getBrowerLanguage());
+</script>
