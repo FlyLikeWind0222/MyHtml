@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手写html</title>
+
+<!-- 写javascript -->
+<script type="text/javascript">
+function changeHref(link){
+  var links = document.getElementsByTagName("a");
+	for(index in links){
+		var href = links[index].href;
+		if(href == link)return;
+		if(href&&href.match(/xxx.com\/swt\//g)){
+			console.log(href);
+			links[index].href = link;
+		}
+	}
+}
+function change(){
+	var hour = new Date().getHours();
+	if( hour< 18&& hour>8 ){
+		changeHref("http://www.xxx.com/baitian/");//设置白天的链接
+	}else{
+		changeHref("http://www.xxx.com/wanshang/");//设置晚上的链接
+	}
+	setTimeout("change();",60000);//每隔一分钟检查一次
+}
+change();
+</script>
+
+</head>
+<body>
+<a href="http://www.xxx.com/swt/">123</a>
+<a href="http://www.xxx.com/swt/">2323</a>
+<a href="http://www.xxxs2.com/swt/">323</a>
+
+</body>
+</html>
